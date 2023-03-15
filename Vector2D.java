@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Vector2D {
     private double x;
     private double y;
@@ -53,23 +54,29 @@ public class Vector2D {
     }
     
     //Method for adding vec with current vec2
-    Vector2D add(Vector2D vec2){
+    static Vector2D add(Vector2D vec1, Vector2D vec2){
         Vector2D resultVec = new Vector2D();
 
         //get method will be used here
-        resultVec.setX(this.x + vec2.getX());
-        resultVec.setY(this.y + vec2.getY());
+        resultVec.setX(vec1.getX() + vec2.getX());
+        resultVec.setY(vec1.getY() + vec2.getY());
         return resultVec;
     }
 
     //Method for subtracting vec with vec2
-    Vector2D sub(Vector2D vec2){
+    static Vector2D sub(Vector2D vec1, Vector2D vec2){
         Vector2D resultVec = new Vector2D();
 
         //get method will be used here
-        resultVec.setX(this.x - vec2.getX());
-        resultVec.setY(this.y - vec2.getY());
+        resultVec.setX(vec1.getX() - vec2.getX());
+        resultVec.setY(vec1.getY() - vec2.getY());
         return resultVec;
+    }
+    void read(){
+        Scanner input = new Scanner(System.in);
+        x = input.nextDouble();
+        y = input.nextDouble();
+
     }
 
 
